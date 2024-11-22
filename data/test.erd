@@ -1,0 +1,79 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dineug/erd-editor/main/json-schema/schema.json",
+  "version": "3.0.0",
+  "settings": {
+    "width": 2000,
+    "height": 2000,
+    "scrollTop": -71,
+    "scrollLeft": -165,
+    "zoomLevel": 1,
+    "show": 431,
+    "database": 4,
+    "databaseName": "",
+    "canvasType": "ERD",
+    "language": 1,
+    "tableNameCase": 4,
+    "columnNameCase": 2,
+    "bracketType": 1,
+    "relationshipDataTypeSync": true,
+    "relationshipOptimization": false,
+    "columnOrder": [
+      1,
+      2,
+      4,
+      8,
+      16,
+      32,
+      64
+    ],
+    "maxWidthComment": -1,
+    "ignoreSaveSettings": 0
+  },
+  "doc": {
+    "tableIds": [
+      "sPukuFW4TGr0LoPmu7yUQ"
+    ],
+    "relationshipIds": [],
+    "indexIds": [],
+    "memoIds": []
+  },
+  "collections": {
+    "tableEntities": {
+      "sPukuFW4TGr0LoPmu7yUQ": {
+        "id": "sPukuFW4TGr0LoPmu7yUQ",
+        "name": "test",
+        "comment": "hoping this works",
+        "columnIds": [],
+        "seqColumnIds": [],
+        "ui": {
+          "x": 365,
+          "y": 171,
+          "zIndex": 2,
+          "widthName": 60,
+          "widthComment": 101,
+          "color": ""
+        },
+        "meta": {
+          "updateAt": 1732240181581,
+          "createAt": 1732240171550
+        }
+      }
+    },
+    "tableColumnEntities": {},
+    "relationshipEntities": {},
+    "indexEntities": {},
+    "indexColumnEntities": {},
+    "memoEntities": {}
+  },
+  "lww": {
+    "sPukuFW4TGr0LoPmu7yUQ": [
+      "tableEntities",
+      1732240171549,
+      -1,
+      {
+        "name": 1732240175584,
+        "comment": 1732240181580
+      }
+    ]
+  }
+}

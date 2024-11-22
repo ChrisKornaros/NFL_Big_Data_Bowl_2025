@@ -16,6 +16,8 @@ sources:
     tables:
       - name: agg_play_summary
         description: "Presnap offensive formation and alignment, play type, outcome event"
+      - name: agg_play_expanded
+        description: "Development/testing table for expanding the play outcome"
 
 
   - name: bronze

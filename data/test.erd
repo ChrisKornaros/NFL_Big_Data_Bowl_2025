@@ -4,8 +4,8 @@
   "settings": {
     "width": 2000,
     "height": 2000,
-    "scrollTop": -71,
-    "scrollLeft": -165,
+    "scrollTop": 0,
+    "scrollLeft": 0,
     "zoomLevel": 1,
     "show": 431,
     "database": 4,
@@ -31,7 +31,7 @@
   },
   "doc": {
     "tableIds": [
-      "sPukuFW4TGr0LoPmu7yUQ"
+      "uLol1aKmd74unaaMMoc3F"
     ],
     "relationshipIds": [],
     "indexIds": [],
@@ -39,41 +39,232 @@
   },
   "collections": {
     "tableEntities": {
-      "sPukuFW4TGr0LoPmu7yUQ": {
-        "id": "sPukuFW4TGr0LoPmu7yUQ",
-        "name": "test",
-        "comment": "hoping this works",
-        "columnIds": [],
-        "seqColumnIds": [],
+      "uLol1aKmd74unaaMMoc3F": {
+        "id": "uLol1aKmd74unaaMMoc3F",
+        "name": "games",
+        "comment": "",
+        "columnIds": [
+          "W_0Y91NHSE189YORIcQrv",
+          "V8BkjwgcJTcvY-hlZa5fT",
+          "xV7KMi0XGhFM97M1mbhdo",
+          "mSbKcSYe8ANvZk8Y1Y_Yf",
+          "YAWiAdRyLe5Ca-xvt24-9",
+          "lNv1kKxTfQjxueHHGlSXT",
+          "Qtzjr1OfDqbzBT8Ep_L3Z",
+          "MhkM2edR74abZ50r7rx4x",
+          "mTmx1Y2WTsyVxwf2m6mEb"
+        ],
+        "seqColumnIds": [
+          "W_0Y91NHSE189YORIcQrv",
+          "V8BkjwgcJTcvY-hlZa5fT",
+          "xV7KMi0XGhFM97M1mbhdo",
+          "mSbKcSYe8ANvZk8Y1Y_Yf",
+          "YAWiAdRyLe5Ca-xvt24-9",
+          "lNv1kKxTfQjxueHHGlSXT",
+          "Qtzjr1OfDqbzBT8Ep_L3Z",
+          "MhkM2edR74abZ50r7rx4x",
+          "mTmx1Y2WTsyVxwf2m6mEb"
+        ],
         "ui": {
-          "x": 365,
-          "y": 171,
+          "x": 50,
+          "y": 50,
           "zIndex": 2,
           "widthName": 60,
-          "widthComment": 101,
+          "widthComment": 60,
           "color": ""
         },
         "meta": {
-          "updateAt": 1732240181581,
-          "createAt": 1732240171550
+          "updateAt": 1732290702925,
+          "createAt": 1732290702925
         }
       }
     },
-    "tableColumnEntities": {},
+    "tableColumnEntities": {
+      "W_0Y91NHSE189YORIcQrv": {
+        "id": "W_0Y91NHSE189YORIcQrv",
+        "tableId": "uLol1aKmd74unaaMMoc3F",
+        "name": "gameId",
+        "comment": "",
+        "dataType": "BIGINT",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1732290702925,
+          "createAt": 1732290702925
+        }
+      },
+      "V8BkjwgcJTcvY-hlZa5fT": {
+        "id": "V8BkjwgcJTcvY-hlZa5fT",
+        "tableId": "uLol1aKmd74unaaMMoc3F",
+        "name": "season",
+        "comment": "",
+        "dataType": "BIGINT",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1732290702925,
+          "createAt": 1732290702925
+        }
+      },
+      "xV7KMi0XGhFM97M1mbhdo": {
+        "id": "xV7KMi0XGhFM97M1mbhdo",
+        "tableId": "uLol1aKmd74unaaMMoc3F",
+        "name": "week\"\"",
+        "comment": "",
+        "dataType": "BIGINT",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1732290702925,
+          "createAt": 1732290702925
+        }
+      },
+      "mSbKcSYe8ANvZk8Y1Y_Yf": {
+        "id": "mSbKcSYe8ANvZk8Y1Y_Yf",
+        "tableId": "uLol1aKmd74unaaMMoc3F",
+        "name": "gameDate",
+        "comment": "",
+        "dataType": "DATE",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1732290702926,
+          "createAt": 1732290702926
+        }
+      },
+      "YAWiAdRyLe5Ca-xvt24-9": {
+        "id": "YAWiAdRyLe5Ca-xvt24-9",
+        "tableId": "uLol1aKmd74unaaMMoc3F",
+        "name": "gameTimeEastern",
+        "comment": "",
+        "dataType": "TIME",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 103,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1732290702926,
+          "createAt": 1732290702926
+        }
+      },
+      "lNv1kKxTfQjxueHHGlSXT": {
+        "id": "lNv1kKxTfQjxueHHGlSXT",
+        "tableId": "uLol1aKmd74unaaMMoc3F",
+        "name": "homeTeamAbbr",
+        "comment": "",
+        "dataType": "VARCHAR",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 90,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1732290702926,
+          "createAt": 1732290702926
+        }
+      },
+      "Qtzjr1OfDqbzBT8Ep_L3Z": {
+        "id": "Qtzjr1OfDqbzBT8Ep_L3Z",
+        "tableId": "uLol1aKmd74unaaMMoc3F",
+        "name": "visitorTeamAbbr",
+        "comment": "",
+        "dataType": "VARCHAR",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 94,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1732290702926,
+          "createAt": 1732290702926
+        }
+      },
+      "MhkM2edR74abZ50r7rx4x": {
+        "id": "MhkM2edR74abZ50r7rx4x",
+        "tableId": "uLol1aKmd74unaaMMoc3F",
+        "name": "homeFinalScore",
+        "comment": "",
+        "dataType": "BIGINT",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 93,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1732290702926,
+          "createAt": 1732290702926
+        }
+      },
+      "mTmx1Y2WTsyVxwf2m6mEb": {
+        "id": "mTmx1Y2WTsyVxwf2m6mEb",
+        "tableId": "uLol1aKmd74unaaMMoc3F",
+        "name": "visitorFinalScore",
+        "comment": "",
+        "dataType": "BIGINT",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 96,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1732290702926,
+          "createAt": 1732290702926
+        }
+      }
+    },
     "relationshipEntities": {},
     "indexEntities": {},
     "indexColumnEntities": {},
     "memoEntities": {}
   },
-  "lww": {
-    "sPukuFW4TGr0LoPmu7yUQ": [
-      "tableEntities",
-      1732240171549,
-      -1,
-      {
-        "name": 1732240175584,
-        "comment": 1732240181580
-      }
-    ]
-  }
+  "lww": {}
 }

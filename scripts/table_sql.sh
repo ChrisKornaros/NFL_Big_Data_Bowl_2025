@@ -24,8 +24,8 @@ do
 
   # Format the SQL into multiline
   # Not working, need to come back to this later
-  table_name_line=$(echo "$sql" | sed -n 's/CREATE TABLE \([^ ]\+\)(.*/CREATE TABLE \1(/p')
-  columns=$(echo "$sql" | sed -n 's/CREATE TABLE [^ ]\+(\(.*\));/\1/p' | tr ',' '\n' | sed '1!s/^/,/')
+  #table_name_line=$(echo "$sql" | sed -n 's/CREATE TABLE \([^ ]\+\)(.*/CREATE TABLE \1(/p')
+  #columns=$(echo "$sql" | sed -n 's/CREATE TABLE [^ ]\+(\(.*\));/\1/p' | tr ',' '\n' | sed '1!s/^/,/')
 
   formatted_sql="$table_name_line\n$columns\n);"
   

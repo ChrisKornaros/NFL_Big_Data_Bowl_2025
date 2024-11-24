@@ -1,10 +1,6 @@
-WITH plays_sliced AS (
-    SELECT offenseFormation, receiverAlignment, playType, yardsGained, playOutcome
-    FROM silver.plays_agg
-)
-
 -- Worth considering, for future changes: group positive/negative outcomes as ordinal (high/low), for better interpretability
-SELECT CASE 
+SELECT gameId, playId, possessionTeam
+    CASE 
     WHEN offenseFormation LIKE '%JUMBO%' THEN 1
     WHEN offenseFormation LIKE '%WILDCAT%' THEN 2
     WHEN offenseFormation LIKE '%EMPTY%' THEN 3
@@ -43,5 +39,5 @@ SELECT CASE
         WHEN playOutcome LIKE '%Fumble%' THEN 7
         WHEN playOutcome LIKE '%Penalty%' THEN 0
         END AS playOutcome
-FROM plays_sliced
+FROM silver.plays_agg
 

@@ -1,6 +1,6 @@
 -- Looks at the average total yards by offensive formation and receiver alignment
 -- Good target for linear regression
-SELECT offenseFormation, receiverAlignment, avg(rushing_yards + receiving_yards)
-  FROM silver.agg_play_summary
+SELECT offenseFormation, receiverAlignment, avg(yardsGained)
+  FROM silver.plays_agg
   GROUP BY offenseFormation, receiverAlignment
-  ORDER BY avg(rushing_yards + receiving_yards) DESC
+  ORDER BY avg(yardsGained) DESC

@@ -1,4 +1,4 @@
-WITH play_analysis AS (
+WITH offensive_play_analysis AS (
     SELECT
         gameId,
         playId,

@@ -23,7 +23,7 @@ WITH offensive_play_analysis AS (
             WHEN isDropback AND passResult = 'I' THEN 'Incomplete'
             WHEN isDropback AND passResult = 'IN' THEN 'Intercepted'
             WHEN isDropback AND passResult = 'S' THEN 'Sacked'
-            WHEN isDropback AND passResult = 'R' THEN 'Scramble'
+            WHEN isDropback AND passResult = 'R' THEN 'Scrambled'
             WHEN isDropback AND passResult = 'Fumbled' THEN 'Fumbled'
             WHEN isDropback AND playDescription ILIKE '%touchdown%' THEN 'Touchdown'
             -- Rush outcomes

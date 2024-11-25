@@ -1,5 +1,5 @@
 -- Worth considering, for future changes: group positive/negative outcomes as ordinal (high/low), for better interpretability
-SELECT gameId, playId, possessionTeam,
+SELECT gameId, playId, possessionTeam, yardlineNumber,
     CASE 
     WHEN offenseFormation LIKE '%JUMBO%' THEN 1
     WHEN offenseFormation LIKE '%WILDCAT%' THEN 2

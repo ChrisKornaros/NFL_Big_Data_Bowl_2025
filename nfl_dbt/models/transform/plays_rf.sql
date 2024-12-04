@@ -16,25 +16,73 @@ WITH playsConverted AS (
         CASE WHEN passResult = 'S' THEN CAST(1 AS DECIMAL) ELSE CAST(0 AS DECIMAL) END AS passResult_sack,
         CASE WHEN passResult = 'IN' THEN CAST(1 AS DECIMAL) ELSE CAST(0 AS DECIMAL) END AS passResult_interception,
         CASE WHEN passResult = 'R' THEN CAST(1 AS DECIMAL) ELSE CAST(0 AS DECIMAL) END AS passResult_scramble,
-        COALESCE(CAST(passLength AS DECIMAL), 0) AS passLength, -- Error here now
-        COALESCE(CAST(targetX AS DECIMAL), 0) AS targetX,
-        COALESCE(CAST(targetY AS DECIMAL), 0) AS targetY,
+        COALESCE(        
+        CASE 
+            WHEN passLength = 'NA' OR passLength IS NULL THEN 
+                (SELECT AVG(CAST(passLength AS DECIMAL)) 
+                FROM bronze.plays 
+                WHERE passLength != 'NA' AND passLength IS NOT NULL)
+            ELSE CAST(passLength AS DECIMAL) END, 0) AS passLength,
+        COALESCE(        
+        CASE 
+            WHEN targetX = 'NA' OR targetX IS NULL THEN 
+                (SELECT AVG(CAST(targetX AS DECIMAL)) 
+                FROM bronze.plays 
+                WHERE targetX != 'NA' AND targetX IS NOT NULL)
+            ELSE CAST(targetX AS DECIMAL) END, 0) AS targetX,
+        COALESCE(        
+        CASE 
+            WHEN targetY = 'NA' OR targetY IS NULL THEN 
+                (SELECT AVG(CAST(targetY AS DECIMAL)) 
+                FROM bronze.plays 
+                WHERE targetY != 'NA' AND targetY IS NOT NULL)
+            ELSE CAST(targetY AS DECIMAL) END, 0) AS targetY,
         CASE WHEN playAction IS NOT NULL THEN CAST(1 AS DECIMAL) ELSE CAST(0 AS DECIMAL) END AS playAction,
         CASE WHEN passTippedAtLine IS NOT NULL THEN CAST(1 AS DECIMAL) ELSE CAST(0 AS DECIMAL) END AS passTippedAtLine,
         CASE WHEN unblockedPressure IS NOT NULL THEN CAST(1 AS DECIMAL) ELSE CAST(0 AS DECIMAL) END AS unblockedPressure,
         CASE WHEN qbSpike IS NOT NULL THEN CAST(1 AS DECIMAL) ELSE CAST(0 AS DECIMAL) END AS qbSpike,
         CASE WHEN qbKneel IS NOT NULL THEN CAST(1 AS DECIMAL) ELSE CAST(0 AS DECIMAL) END AS qbKneel,
         CASE WHEN qbSneak IS NOT NULL THEN CAST(1 AS DECIMAL) ELSE CAST(0 AS DECIMAL) END AS qbSneak,
-        COALESCE(CAST(penaltyYards AS DECIMAL), 0) AS penaltyYards,
+        COALESCE(        
+        CASE 
+            WHEN penaltyYards = 'NA' OR penaltyYards IS NULL THEN 
+                (SELECT AVG(CAST(penaltyYards AS DECIMAL)) 
+                FROM bronze.plays 
+                WHERE penaltyYards != 'NA' AND penaltyYards IS NOT NULL)
+            ELSE CAST(penaltyYards AS DECIMAL) END, 0) AS penaltyYards,
         prePenaltyYardsGained, 
         homeTeamWinProbabilityAdded, 
         visitorTeamWinProbilityAdded, 
         expectedPointsAdded, 
         CASE WHEN isDropback IS NOT NULL THEN CAST(1 AS DECIMAL) ELSE CAST(0 AS DECIMAL) END AS isDropback, 
-        COALESCE(CAST(timeToThrow AS DECIMAL), 0) AS timeToThrow,
-        COALESCE(CAST(timeInTackleBox AS DECIMAL), 0) AS timeInTackleBox,
-        COALESCE(CAST(timeToSack AS DECIMAL), 0) AS timeToSack,
-        COALESCE(CAST(dropbackDistance AS DECIMAL), 0) AS dropbackDistance,
+        COALESCE(        
+        CASE 
+            WHEN timeToThrow = 'NA' OR timeToThrow IS NULL THEN 
+                (SELECT AVG(CAST(timeToThrow AS DECIMAL)) 
+                FROM bronze.plays 
+                WHERE timeToThrow != 'NA' AND timeToThrow IS NOT NULL)
+            ELSE CAST(timeToThrow AS DECIMAL) END, 0) AS timeToThrow,
+        COALESCE(        
+        CASE 
+            WHEN timeInTackleBox = 'NA' OR timeInTackleBox IS NULL THEN 
+                (SELECT AVG(CAST(timeInTackleBox AS DECIMAL)) 
+                FROM bronze.plays 
+                WHERE timeInTackleBox != 'NA' AND timeInTackleBox IS NOT NULL)
+            ELSE CAST(timeInTackleBox AS DECIMAL) END, 0) AS timeInTackleBox,
+        COALESCE(        
+        CASE 
+            WHEN timeToSack = 'NA' OR timeToSack IS NULL THEN 
+                (SELECT AVG(CAST(timeToSack AS DECIMAL)) 
+                FROM bronze.plays 
+                WHERE timeToSack != 'NA' AND timeToSack IS NOT NULL)
+            ELSE CAST(timeToSack AS DECIMAL) END, 0) AS timeToSack,
+        COALESCE(        
+        CASE 
+            WHEN dropbackDistance = 'NA' OR dropbackDistance IS NULL THEN 
+                (SELECT AVG(CAST(dropbackDistance AS DECIMAL)) 
+                FROM bronze.plays 
+                WHERE dropbackDistance != 'NA' AND dropbackDistance IS NOT NULL)
+            ELSE CAST(dropbackDistance AS DECIMAL) END, 0) AS dropbackDistance,
         pff_runPassOption,
         -- Replace NULL in playClockAtSnap with the average value and cast as DECIMAL, 
         CASE 
@@ -44,12 +92,7 @@ WITH playsConverted AS (
                 WHERE playClockAtSnap != 'NA' AND playClockAtSnap IS NOT NULL)
             ELSE CAST(playClockAtSnap AS DECIMAL)END AS playClockAtSnap,
         -- Replace NULL in pff_manZone with the most common value and cast as DECIMAL
-        COALESCE(CAST(pff_manZone AS DECIMAL), 
-        CAST((SELECT pff_manZone 
-                FROM bronze.plays 
-                GROUP BY pff_manZone 
-                ORDER BY COUNT(*) DESC 
-                LIMIT 1) AS DECIMAL)) AS pff_manZone,
+        COALESCE(CAST(CASE WHEN pff_manZone = 'Man' THEN 0 WHEN pff_manZone = 'Zone' THEN 1 ELSE 2 END AS DECIMAL)) AS pff_manZone,
         -- Convert categorical values of pff_runConceptPrimary to numbers and cast as DECIMAL
         CASE 
             WHEN pff_runConceptPrimary = 'NA' OR pff_runConceptPrimary = 'UNDEFINED' THEN CAST(0 AS DECIMAL)

@@ -1,6 +1,26 @@
-target/
-dbt_packages/
-logs/
-data/raw/*.csv
-.config/nfl.duckdb
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Quarto Files
+docs/*.html
+docs/*ipynb
+docs/*_files/
+
+# dbt Files
+nfl_dbt/logs
+nfl_dbt/target
+
+# Database Files
+*.duckdb
+
+
+# Other local files
 .DS_Store

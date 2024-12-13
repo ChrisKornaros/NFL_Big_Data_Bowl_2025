@@ -2,6 +2,5 @@
 title: "NFL Big Data Bowl 2025"
 ---
 
-## Quarto
-
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+## Introduction
+I will add to this later. Currently, this will be a rough combination of my early notebooks. 
